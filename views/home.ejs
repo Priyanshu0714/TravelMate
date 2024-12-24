@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./output.css" rel="stylesheet" />
+  <link rel="icon" href="/images/favicon.svg">
+  <title>TravelMate</title>
+  <!-- poppins by google font -->
+  <!-- Poppins font by google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  
+</head>
+
+<body class="font-poppins overflow-y-scroll flex flex-col relative">
+  <!-- for the first header part -->
+  <div id="part1" class="part1 w-full h-[70vh] ">
+    <div class="navigation-bar h-[10%] w-full flex justify-between items-center">
+      <!-- left and right side -->
+      <div id="logo" class="left-side h-full w-fit flex items-center p-3 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" width="40" viewBox="0 0 640 512">
+          <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#3b82f6"
+            d="M345.6 108.8c-8.3-11-22.7-15.5-35.7-11.2S288 114.2 288 128l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 86.4 115.2c6 8.1 15.5 12.8 25.6 12.8s19.6-4.7 25.6-12.8L576 224l0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-256c0-13.8-8.8-26-21.9-30.4s-27.5 .1-35.7 11.2L464 266.7 345.6 108.8zM0 128c0 17.7 14.3 32 32 32l64 0 0 224c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 96C14.3 96 0 110.3 0 128z" />
+        </svg>
+      </div>
+      <div
+        class="right-side h-full w-fit flex justify-center items-center text-black text-[14px] font-medium p-3 gap-6 ">
+        <div class="right-side-parts">
+          <button id="features">Features</button>
+        </div>
+        <div class="right-side-parts">
+          <button id="about">About</button>
+        </div>
+        <div class="right-side-parts relative">
+          <a href="mailto:choudhary.priyanshu1401@gmail.com"><button>Contact</button></a>
+        </div>
+        <div class="right-side-parts">
+          <button id="logout">LogOut</button>
+        </div>
+      </div>
+    </div>
+    <div class="part1-content h-[90%] w-full flex flex-shrink-0 items-center justify-center flex-col border border-gray-300 ">
+      <div class="w-[50%] h-full flex items-center justify-center flex-col gap-3 max-xl:w-[80%] max-sm:w-[95%]">
+        <div class="part1-heading font-bold text-center text-5xl max-md:text-4xl max-sm:text-3xl">
+          Never Travel Alone Again
+        </div>
+        <div class="part1-subheading text-xl text-center text-gray-500 tracking-tight max-sm:text-base">
+          Connect with like-minded travelers, share experiences, and make your
+          journey unforgettable.
+        </div>
+        <button id="part1-button"
+          class="bg-black text-white w-[50%] h-10 rounded-md tracking-tight text-[14px] mt-2 hover:bg-gray-800 max-lg:w-[80%]">
+          Get Started
+        </button>
+
+        <!-- when the button gets hidden this part gets displayed -->
+        <div id="button-click-hidden"
+          class="mt-4 border border-gray-300 h-auto w-[50%] items-center justify-center flex-col py-3 rounded-lg hidden max-lg:w-[70%] max-sm:w-[80%]">
+          <div class="button-header font-semibold text-xl">
+            Find Travel Companions
+          </div>
+          <div class="button-from-part w-full flex items-center justify-center flex-col mt-4 gap-2">
+            <div class="text-black text-[15px] tracking-tight">From</div>
+            <input id="Departure" class="h-9 w-[90%] border border-gray-300 p-3 rounded-lg text-gray-600 text-[15px]"
+              type="text" placeholder="Departure location" />
+          </div>
+          <div class="button-from-part w-full flex items-center justify-center flex-col mt-4 gap-2">
+            <div class="text-black text-[15px] tracking-tight">To</div>
+            <input id="Destination" class="h-9 w-[90%] border border-gray-300 p-3 rounded-lg text-gray-600 text-[15px]"
+              type="text" placeholder="Destination" />
+          </div>
+          <div class="button-from-part w-full flex items-center justify-center flex-col mt-4 gap-2">
+            <div class="text-black text-[15px] tracking-tight">
+              Departure Date
+            </div>
+            <input id="Date"
+              class="h-9 min-w-[90%] border border-gray-300 p-3 rounded-lg text-gray-500 text-[15px] cursor-pointer"
+              type="date" placeholder="Pick a Date" onclick="this.showPicker()" onblur="(this.type='text')"
+              onfocus="(this.type='date')" />
+          </div>
+          <div id="search-details-req" class="text-red-500 mt-1 hidden">Fill the above field</div>
+          <button id="search-button"
+            class="h-9 w-[90%] border border-gray-300 p-3 mt-3 mb-4 flex items-center justify-center rounded-lg bg-black text-white text-sm gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#ffffff"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+            </svg>
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- this part is exclusive for search only -->
+  <div id="part-hidden"
+    class="p-20 bg-red h-auto hidden justify-center items-center flex-col gap-20 border border-gray-300">
+    <div class="text-5xl font-semibold tracking-tight">Matching Travelers</div>
+    <div id="create-matching-travellers" class="flex justify-center items-center flex-wrap gap-10 flex-row">
+
+    </div>
+  </div>
+
+  <div id="part2"
+    class="part2 w-full h-[55vh] bg-gray-200 flex items-center justify-center flex-col max-md:h-auto flex-shrink-0">
+    <div class="part2-heading text-5xl font-semibold tracking-tight max-md:pt-10 ">
+      Key Features
+    </div>
+    <div
+      class="part2-content flex items-center justify-between flex-row w-full p-10 space-x-10 text-center max-md:flex-col max-md:space-x-0">
+      <div class="flex items-center justify-center flex-col py-8 gap-3">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-map-pin w-12 h-12 text-blue-600">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <div class="font-semibold text-lg">Find Your Perfect Match</div>
+        <div class="text-gray-500">
+          Connect with travelers heading to the same destination.
+        </div>
+      </div>
+      <div class="flex items-center justify-center flex-col py-8 gap-3">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-users w-12 h-12 text-blue-600">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div class="font-semibold text-lg">Build Your Travel Community</div>
+        <div class="text-gray-500">
+          Create lasting friendships with fellow adventurers.
+        </div>
+      </div>
+      <div class="flex items-center justify-center flex-col py-8 gap-3">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-bell w-12 h-12 text-blue-600">
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+          </svg>
+        </div>
+        <div class="font-semibold text-lg">Stay Updated</div>
+        <div class="text-gray-500">
+          Receive notifications when you find a perfect travel match.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="part3"
+    class="part3 flex flex-shrink-0 items-center justify-around flex-row w-full h-[80vh] p-12 border border-gray-200 max-lg:min-h-[100vh] max-md:bg-[url('/images/login-page.avif')] max-md:bg-cover max-md:bg-no-repeat max-md:bg-center max-md:p-4">
+    <div
+      class="part3-content h-full w-[50%] flex items-center justify-center flex-col gap-10 max-md:w-[100%] max-md:bg-white max-md:bg-opacity-80 max-md:p-2">
+      <div class="space-y-2">
+        <div class="text-5xl font-semibold tracking-tight max-lg:text-4xl">
+          About TravelMate
+        </div>
+        <div class="flex text-gray-500 text-lg max-lg:text-base">
+          TravelMate was born from a simple idea: no one should have to
+          explore the world alone. We believe that travel is not just about
+          the destinations, but about the connections we make along the way.
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="text-xl font-bold tracking-tight">Our Mission</div>
+        <div class="flex text-gray-500">
+          To create a global community of travelers, fostering friendships,
+          cultural exchange, and unforgettable experiences. We're here to make
+          sure that wherever you go, you'll have a friend to share the journey
+          with.
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="text-xl font-bold tracking-tight">Join Our Community</div>
+        <div class="flex text-gray-500">
+          Whether you're a solo traveler looking for companionship, or someone
+          who loves meeting new people from around the world, TravelMate is
+          your gateway to a more connected and enriching travel experience.
+        </div>
+      </div>
+    </div>
+    <div
+      class="part3-image h-full w-[40%] border border-red-950 bg-[url('/images/login-page.avif')] bg-no-repeat bg-cover bg-center rounded-3xl max-md:hidden ">
+    </div>
+  </div>
+  <div id="part4"
+    class="part4 h-[7vh] w-full flex flex-shrink-0 items-center justify-between flex-row py-5 px-10 text-gray-500 text-[14px] tracking-tight max-sm:px-2 max-sm:py-3 max-sm:text-[12px]">
+    <div class="part4-left">© 2024 TravelMate. All rights reserved.</div>
+    <div class="part4-right flex justify-center items-center flex-row gap-10">
+      <a class="terms-of-services hover:text-blue-400" href="#">Terms of Service</a>
+      <a class="privacy hover:text-blue-400" href="#">Privacy</a>
+    </div>
+  </div>
+
+  <!-- this part is for the popup window so details input -->
+  <div id="pop-up" class=" inset-0 hidden flex-shrink-0 justify-center items-center bg-black bg-opacity-50 fixed ">
+    <div id="pop-up-details"
+      class="h-[51%] w-[50%]  border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar max-lg:w-[70%] max-lg:h-[60%] max-sm:w-[85%] flex items-between justify-between flex-col">
+      <!-- inner content inside box -->
+      <div class="flex items-center justify-between flex-row">
+        <div class="pop-up-heading font-bold text-xl">No Matching Travelling Found!!</div>
+        <div id="pop-up-close" class="pop-up-close p-2  rounded-full hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
+            viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path fill="#000000"
+              d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+          </svg>
+        </div>
+      </div>
+      <div class="text-sm text-wrap max-sm:text-[13px]">We couldn't find any travelers matching your criteria. Would you
+        like to submit
+        your travel details for future matches?
+      </div>
+      <div class="font-bold" style="margin-top: 15px;">Add Your Travel Details</div>
+      <!-- basic traveller details -->
+      <div id="basic-traveller-detail" data-attribute="1"
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3 ">
+        <div class="flex flex-row justify-between items-center w-full h-full relative">
+          <div id="temp1" class="w-full m-3">Basic Details</div>
+          <div id="right-arrow1"
+            class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
+              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+            </svg>
+          </div>
+          <!-- close button svg -->
+          <div id="close-button1" class="hidden  px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
+              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+            </svg>
+          </div>
+        </div>
+        <!-- name will be taken from database -->
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
+          <input
+            id="basic-details-name" class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
+            name="user_name" placeholder="Enter Name"></div>
+        <!-- for age -->
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
+          <input
+            id="basic-details-age" class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
+            name="age" placeholder="Enter age"></div>
+        <!-- for gender -->
+        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 text-gray-500 rounded-lg text-[15px]"><select
+            id="basic-details-gender"
+            class="h-full w-full outline-none rounded-lg p-2 focus:outline-black" name="gender">
+            <option value="" disabled selected>Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select></div>
+      </div>
+      <!-- travel preference -->
+      <div id="basic-traveller-detail" data-attribute="2"
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3 ">
+        <div class="flex flex-row justify-between items-center w-full h-full relative">
+          <div id="temp2" class="w-full m-3">Travel Details</div>
+          <div id="right-arrow2"
+            class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
+              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+            </svg>
+          </div>
+          <!-- close button svg -->
+          <div id="close-button2" class="hidden  px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
+              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+            </svg>
+          </div>
+        </div>
+        <!-- for departure -->
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
+            id="travel-details-departure" class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black"
+            type="text" name="age" placeholder="Enter Departure"></div>
+        <!-- for destination -->
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
+            id="travel-details-destination" class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black"
+            type="text" name="age" placeholder="Enter Destination"></div>
+        <!-- for date -->
+        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
+            id="travel-details-date" class="h-full w-full outline-none placeholder:text-gray-500 p-3 rounded-lg focus:outline-black]" type="date"
+            placeholder="Pick a Date" onclick="this.showPicker()" onblur="(this.type='text')" onfocus="(this.type='date')" /></div>
+
+      </div>
+      <!-- Intrest & Preferences -->
+      <div id="basic-traveller-detail" data-attribute="3"
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-2 ">
+        <div class="flex flex-row justify-between items-center w-full h-full relative">
+          <div id="temp3" class="w-full m-3">Interest & Preferences</div>
+          <div id="right-arrow3"
+            class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
+              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+            </svg>
+          </div>
+          <!-- close button svg -->
+          <div id="close-button3" class="hidden  px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
+              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path fill="#000000"
+                d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+            </svg>
+          </div>
+        </div>
+        <!-- for gender preferences -->
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-[15px]"><select
+            id="gender-preferences" class="h-full w-full outline-none rounded-lg p-2 text-gray-500 focus:outline-black"
+            name="gender">
+            <option value="" disabled selected>Preferred Gender</option>
+            <option value="Male">Male Only</option>
+            <option value="Female">Female Only</option>
+            <option value="Any">Any</option>
+          </select></div>
+        <!-- for communication -->
+        <div class="hidden req text-[12px] mx-4">Your Communication Preference Detail</div>
+        <div
+          class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px] justify-center items-center flex-col ">
+          <input id="communication-details" class="placeholder:text-gray-500 h-full w-full outline-none p-3 rounded-lg focus:outline-black"
+            type="text" name="age" placeholder="(email/phone_number/social_media)">
+        </div>
+      </div>
+      <!-- this part is shown when all fields are not filled -->
+      <div id="fill-the-above-field" class="text-red-600 hidden">Please fill the above field</div>
+      <!-- summit details button for popup -->
+      <button id="pop-up-submit"
+        class="w-full h-9 border border-gray-400 bg-black text-white flex items-center justify-center rounded-lg"
+        style="margin-top:20px; padding: 10px 0;">Submit Details</button>
+    </div>
+    <div id="pop-up-animation"
+      class="h-[51%] w-[50%] border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar hidden justify-center items-center">
+      <iframe class="object-cover h-full w-full "
+        src="https://lottie.host/embed/18aad141-0198-4668-a6b8-d5d839af06c4/AFFnFod1BK.lottie"></iframe>
+    </div>
+  </div>
+
+
+  <script src="/js/home.js"></script>
+</body>
+
+</html>

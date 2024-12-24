@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/output.css" rel="stylesheet">
+  <link rel="icon" href="/images/favicon.svg">
+  <title>TravelMate</title>
+  <!-- poppins by google font -->
+     <!-- Poppins font by google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+</head>
+<body class="font-poppins">
+  <div class="main-container w-[100vw] h-screen flex flex-row max-sm:flex-col">
+    <!-- left side -->
+    <div class="image-container flex-shrink-0 w-[50%] bg-[url('/images/login-page.avif')] bg-center bg-cover bg-no-repeat rounded-tr-3xl rounded-br-3xl max-sm:w-full max-sm:rounded-r-none max-sm:min-h-[300px] max-lg:hidden max-sm:flex">
+
+        <div class="image-container-content h-full w-auto flex flex-col justify-end px-5 py-7 text-white space-y-2">
+            <h1 class="font-bold text-[35px] max-xl:text-[30px] max-sm:text-[24px]">
+                Find Your Travel Companion
+            </h1>
+            <div class="text-[13px]">
+                Connect with like-minded travelers and explore the world together.
+            </div>
+        </div>
+    </div>
+    <!-- right side -->
+    <div class="login-container w-[50%] flex items-center justify-center max-sm:w-full max-sm:py-5 max-sm:flex-1 max-lg:bg-[url('/images/login-page.avif')] max-lg:bg-center max-lg:bg-cover max-lg:bg-no-repeat max-lg:w-full max-sm:bg-none"> 
+        <div class="login container w-[60%]  flex items-center justify-center flex-col gap-3 max-xl:w-[80%] max-sm:w-[90%] max-lg:bg-white max-lg:bg-opacity-70 max-lg:p-5 max-sm:p-0">
+            <h1 class="heading font-bold text-3xl">Welcome To TravelMate</h1>
+            <div class="subheading text-[#4c5663] px-3 text-[15px]">Sign Up to find your perfect travel companion</div>
+            <!-- name container -->
+            <div class="email-box w-full space-y-2 mt-5 mb-2">
+                <div class="box-text">Full Name</div>
+                <input class="w-full h-10 border border-gray-300 rounded-lg px-3 py-1 placeholder-[#72727a] text-[#72727a] outline-2 outline-gray-400 text-sm" type="text" name="fullname" id="fullname" placeholder="Full Name">
+             </div>
+            <!-- email container -->
+             <div class="email-box w-full space-y-2 mb-2">
+                <div class="box-text">Email</div>
+                <input class="w-full h-10 border border-gray-300 rounded-lg px-3 py-1 placeholder-[#72727a] text-[#72727a] outline-2 outline-gray-400 text-sm" type="email" name="email" id="signup_email" placeholder="uid@cuchd.in">
+             </div>
+             <!-- password container -->
+             <div class="create-password-box w-full space-y-2 mb-2">
+                <div class="box-text">Create Password</div>
+                <input class="w-full h-10 border border-gray-300 rounded-lg px-3 py-1 placeholder-[#72727a] text-[#72727a] outline-2 outline-gray-400 text-sm" type="password" name="create-password" id="create-password">
+             </div>
+             <div class="confirm-password-box w-full space-y-2 mb-2">
+                <div class="box-text">Confirm Password</div>
+                <input class="w-full h-10 border border-gray-300 rounded-lg px-3 py-1 placeholder-[#72727a] text-[#72727a] outline-2 outline-gray-400 text-sm" type="password" name="confirm-password" id="confirm-password">
+             </div>
+             <!-- PhoneNumber container -->
+            <div class="phoneNumber-box w-full space-y-2 mb-6">
+                <div class="box-text">Mobile Number</div>
+                <input class="w-full h-10 border border-gray-300 rounded-lg px-3 py-1 placeholder-[#72727a] text-[#72727a] outline-2 outline-gray-400 text-sm" type="text" name="fullname" id="mobileNumber" placeholder="Your Number">
+             </div>
+             <div id="fill-all-field" class="text-red-500 text-left w-full hidden">Fill the above field</div>
+             <button id="signup_button" class="w-[100%] h-10 border border-black rounded-lg px-3 py-1 text-white bg-black outline-none text-sm active:bg-white active:text-black mb-4">Sign Up</button>
+             <!-- continue with -->
+             <div class="continue-with w-full relative flex items-center justify-center">
+                <div class="line h-[1px] w-full bg-gray-200 absolute top-[50%] z-0"></div>
+                <div class="continue-with-content z-10 bg-white text-[11px] text-[#606067] px-1">OR CONTINUE WITH</div>
+             </div>
+             <div class="signup text-[12px] mt-4">Already Have an Account!  <a class="text-blue-500 font-bold tracking-wide" href="/">Sign In</a></div>
+        </div>
+    </div>
+  </div>
+  <script src="/js/signup.js"></script>
+</body>
+</html>
