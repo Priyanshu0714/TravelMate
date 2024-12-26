@@ -38,6 +38,8 @@ document.getElementById("features").addEventListener("click", () => {
   });
   document.getElementById("search-button").addEventListener("click", async () => {
     // to make sure pop-up-animation is disabled
+    const searchButton=document.getElementById("search-button")
+    searchButton.disabled=true;
     if(document.getElementById("pop-up-animation").classList.contains("flex")){
         document.getElementById("pop-up-animation").classList.replace("flex","hidden")
     }
@@ -51,9 +53,9 @@ document.getElementById("features").addEventListener("click", () => {
     console.log(departure,destination)
     if (!departure || !destination || !date) {
       document.getElementById("search-details-req").classList.remove("hidden");
-      document.getElementById("search-details-req").innerText =
-        "Fill the above details";
-        return;
+      document.getElementById("search-details-req").innerText ="Fill the above details";
+      searchButton.disabled = false;
+      return;
     }
     if (!check_date(date)) {
       if (
@@ -61,8 +63,8 @@ document.getElementById("features").addEventListener("click", () => {
       ) {
         document.getElementById("search-details-req").classList.remove("hidden");
       }
-      document.getElementById("search-details-req").innerText =
-        "Select a valid date";
+      document.getElementById("search-details-req").innerText ="Select a valid date";
+      searchButton.disabled = false;
       return;
     }
   
@@ -78,10 +80,15 @@ document.getElementById("features").addEventListener("click", () => {
           date: date,
         }),
       });
+      searchButton.disabled=false;
       if (respose.ok) {
         const data = await respose.json();
         if (!data.message) {
           document.getElementById("pop-up").classList.replace("hidden", "flex");
+          document.getElementById("Departure").value=""
+          document.getElementById("Destination").value=""
+          document.getElementById("Date").value=""
+          return;
         } else {
           data.records.forEach((temp) => {
             document.getElementById(
@@ -99,15 +106,22 @@ document.getElementById("features").addEventListener("click", () => {
           <button class="testing-connect w-full h-[40px] bg-black text-white rounded-lg">Connect</button>
         </div>`;
           });
-          document
-            .getElementById("part-hidden")
-            .classList.replace("hidden", "flex");
+          document.getElementById("part-hidden").classList.replace("hidden", "flex");
+          document.getElementById("Departure").value=""
+          document.getElementById("Destination").value=""
+          document.getElementById("Date").value=""
+          if(document.getElementById("search-details-req").classList.contains("flex")){
+            document.getElementById("search-details-req").classList.replace("flex","hidden")
+          }
+          document.getElementById("part-hidden").scrollIntoView({ behavior: "smooth" });
         }
       } else {
         console.log("response.ok error received");
+        return;
       }
     } catch (error) {
       console.log("try-catch error occured");
+      return;
     }
   });
   
@@ -213,16 +227,13 @@ document.getElementById("features").addEventListener("click", () => {
     if(basic_detail_name.length<3){
       document.getElementById("fill-the-above-field").classList.replace("hidden", "flex");
       document.getElementById("fill-the-above-field").innerText="Name is too short!"
+      return; 
     }
     // to check basic detail age
-    try {
-      if(!int(basic_detail_age)){
-        document.getElementById("fill-the-above-field").classList.replace("hidden", "flex");
-        document.getElementById("fill-the-above-field").innerText="Incorrect age type!"
-      }
-    } catch (error) {
+    if (isNaN(basic_detail_age)) {
       document.getElementById("fill-the-above-field").classList.replace("hidden", "flex");
-      document.getElementById("fill-the-above-field").innerText="Incorrect age type!"
+      document.getElementById("fill-the-above-field").innerText = "Incorrect age type!";
+      return;
     }
     // to fetch and send data
     try {
@@ -255,9 +266,11 @@ document.getElementById("features").addEventListener("click", () => {
           },3000)
         } else {
           console.log("some error occured");
+          return;
         }
       } else {
         console.log("response.ok error occured");
+        return;
       }
     } catch (error) {
       console.log("Please try after sometime");

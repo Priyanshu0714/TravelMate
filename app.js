@@ -111,96 +111,103 @@ const traveller = mongoose.model(
   "traveller_details"
 );
 
-app.get('/home',(req,res)=>{
-    if(check1&&check2){
-        res.render('home')
-    }
-    else{
-        res.render('protect-home')
-    }
-})
+// app.get('/home',(req,res)=>{
+//     if(check1&&check2){
+//         res.render('home')
+//     }
+//     else{
+//         res.render('protect-home')
+//     }
+// })
 
 // // for testing purpose
-// app.get("/home", (req, res) => {
-//   res.render("home");
-// });
+app.get("/home", (req, res) => {
+  res.render("home");
+});
 
 
 // for getting the travller details
 app.post("/home", async (req, res) => {
-  const {type,...rest}=req.body
-    switch(type){
-        case "popup":{
-          const {
-            name,
-            age,
-            gender,
-            departure,
-            destination,
-            date,
-            gender_preference,
-            communication_preferences,
-          } = rest;
-          // console.log(type,
-          //   age,
-          //   gender,
-          //   departure,
-          //   destination,
-          //   date,
-          //   gender_preference,
-          //   communication_preferences)
-            if (
-                !name||
-                !age ||
-                !gender ||
-                !departure ||
-                !destination ||
-                !date ||
-                !gender_preference ||
-                !communication_preferences
-              ) {
-                return res.status(400).send("Unable to fetch data at the moment");
-              }
-              try {
-                const new_traveller = new traveller({
-                  name:name,
-                  age: age,
-                  gender: gender,
-                  departure: departure,
-                  destination: destination,
-                  date: date,
-                  gender_preference: gender_preference,
-                  communication_preferences: communication_preferences,
-                });
-                await new_traveller.save();
-                return res.status(200).json({ success: true, message: "Successful" });
-              } catch (error) {
-                return res.status(400).send("Some error occured");
-              }
-        }
-        case "search-box":{
-          const {departure,destination,date}=rest
-          
-          if(!departure||!destination||!date){
-            return res.status(400).send("Enter valid details")
-          }
-          try {
-              const search_users=await traveller.find({departure:departure,destination:destination})
-              if(search_users.length>0){
-                return res.status(200).json({message:true,records:search_users})
-              }
-              else{
-                return res.status(200).json({message:false})
-              }
-          } catch (error) {
-            res.status(400).send("Some error occured")
-          }
+  const { type, ...rest } = req.body;
+  
+  switch(type) {
+    case "popup": {
+      const {
+        name,
+        age,
+        gender,
+        departure,
+        destination,
+        date,
+        gender_preference,
+        communication_preferences,
+      } = rest;
 
+      if (
+        !name ||
+        !age ||
+        !gender ||
+        !departure ||
+        !destination ||
+        !date ||
+        !gender_preference ||
+        !communication_preferences
+      ) {
+        return res.status(400).send("Unable to fetch data at the moment");
+      }
+
+      try {
+        const new_traveller = new traveller({
+          name,
+          age,
+          gender,
+          departure,
+          destination,
+          date,
+          gender_preference,
+          communication_preferences,
+        });
+        await new_traveller.save();
+        return res.status(200).json({ success: true, message: "Successful" });
+      } catch (error) {
+        return res.status(400).send("Some error occurred");
+      }
+    }
+
+    case "search-box": {
+      const { departure, destination, date } = rest;
+
+      if (!departure || !destination || !date) {
+        return res.status(400).send("Enter valid details");
+      }
+
+      try {
+        const search_users = await traveller.find({
+          departure: departure,
+          destination: destination,
+        });
+
+        if (search_users.length > 0) {
+          const matchedUsers = search_users.filter(i => i.date === date);
+
+          if (matchedUsers.length > 0) {
+            return res.status(200).json({ message: true, records: matchedUsers });
+          } else {
+            return res.status(200).json({ message: false });
+          }
+        } else {
+          return res.status(200).json({ message: false });
         }
-        default:
-          window.alert("Some error occured")
-    }  
+      } catch (error) {
+        return res.status(400).send("Some error occurred");
+      }
+    }
+
+    default:
+      return res.status(400).send("Some unknown error occurred");
+  }
 });
+
 app.listen(port, () => {
   console.log(`Server is running on ${port}`);
 });
