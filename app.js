@@ -22,7 +22,6 @@ app.use('/favicon.ico', express.static(path.join(__dirname, 'public', 'favicon.i
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// let connect = mongoose.connect("mongodb+srv://priyanshu:Ppriyanshu%401407@priyanshucluster.kzr7x.mongodb.net/?retryWrites=true&w=majority&appName=PriyanshuCluster")
 mongoose
   .connect(
     "mongodb+srv://priyanshu:Ppriyanshu%401407@priyanshucluster.kzr7x.mongodb.net/TravelMate?retryWrites=true&w=majority&appName=PriyanshuCluster",
@@ -111,20 +110,14 @@ const traveller = mongoose.model(
   "traveller_details"
 );
 
-// app.get('/home',(req,res)=>{
-//     if(check1&&check2){
-//         res.render('home')
-//     }
-//     else{
-//         res.render('protect-home')
-//     }
-// })
-
-// // for testing purpose
-app.get("/home", (req, res) => {
-  res.render("home");
-});
-
+app.get('/home',(req,res)=>{
+    if(check1&&check2){
+        res.render('home')
+    }
+    else{
+        res.render('protect-home')
+    }
+})
 
 // for getting the travller details
 app.post("/home", async (req, res) => {
