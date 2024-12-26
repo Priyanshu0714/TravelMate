@@ -51,6 +51,9 @@ document.getElementById("features").addEventListener("click", () => {
     console.log(departure,destination)
     if (!departure || !destination || !date) {
       document.getElementById("search-details-req").classList.remove("hidden");
+      document.getElementById("search-details-req").innerText =
+        "Fill the above details";
+        return;
     }
     if (!check_date(date)) {
       if (
