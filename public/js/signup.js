@@ -1,1 +1,136 @@
-const _0x30f1fd=_0x210a;(function(_0x578583,_0x465268){const _0x2e7e0d=_0x210a,_0x68d64c=_0x578583();while(!![]){try{const _0x3aeaf0=parseInt(_0x2e7e0d(0xa6))/0x1+-parseInt(_0x2e7e0d(0xbd))/0x2*(-parseInt(_0x2e7e0d(0xa3))/0x3)+parseInt(_0x2e7e0d(0xbb))/0x4+-parseInt(_0x2e7e0d(0x9b))/0x5*(parseInt(_0x2e7e0d(0xb7))/0x6)+parseInt(_0x2e7e0d(0xb2))/0x7*(-parseInt(_0x2e7e0d(0xa5))/0x8)+-parseInt(_0x2e7e0d(0x93))/0x9+-parseInt(_0x2e7e0d(0xa2))/0xa*(-parseInt(_0x2e7e0d(0xa8))/0xb);if(_0x3aeaf0===_0x465268)break;else _0x68d64c['push'](_0x68d64c['shift']());}catch(_0x57935e){_0x68d64c['push'](_0x68d64c['shift']());}}}(_0x5077,0xeae98));let signup_name=null,signup_email=null,signup_password=null,signup_password_confirm=null,signup_mobileNumber=null;document[_0x30f1fd(0x9e)](_0x30f1fd(0x96))[_0x30f1fd(0xaf)](_0x30f1fd(0xb6),()=>{const _0x78f0f4=_0x30f1fd;signup_name=document[_0x78f0f4(0x9e)](_0x78f0f4(0x90))[_0x78f0f4(0x95)]['trim'](),signup_email=document['getElementById'](_0x78f0f4(0xb4))['value']['trim']()[_0x78f0f4(0x8f)](),signup_password=document['getElementById'](_0x78f0f4(0xab))['value'][_0x78f0f4(0xb3)](),signup_mobileNumber=document[_0x78f0f4(0x9e)]('mobileNumber')[_0x78f0f4(0x95)][_0x78f0f4(0xb3)](),signup_password_confirm=document[_0x78f0f4(0x9e)]('confirm-password')[_0x78f0f4(0x95)]['trim']();if(!signup_email||!signup_mobileNumber||!signup_name||!signup_password||!signup_password_confirm){change_placeholder(),document['getElementById'](_0x78f0f4(0xb0))[_0x78f0f4(0x99)]['classList']['replace'](_0x78f0f4(0xac),_0x78f0f4(0xb5)),document['getElementById'](_0x78f0f4(0xae))[_0x78f0f4(0xb8)][_0x78f0f4(0xa0)](_0x78f0f4(0xba),_0x78f0f4(0xad));return;}if(signup_name['length']<0x5){document[_0x78f0f4(0x9e)](_0x78f0f4(0xb0))[_0x78f0f4(0x99)][_0x78f0f4(0xb8)][_0x78f0f4(0xa0)](_0x78f0f4(0xac),_0x78f0f4(0xb5)),document[_0x78f0f4(0x9e)](_0x78f0f4(0xae))[_0x78f0f4(0xb8)]['replace'](_0x78f0f4(0xba),'flex'),document[_0x78f0f4(0x9e)]('fill-all-field')[_0x78f0f4(0x9c)]=_0x78f0f4(0x98),document[_0x78f0f4(0x9e)](_0x78f0f4(0x90))[_0x78f0f4(0x95)]='';return;}if(!email_checker(signup_email))return;if(!password_checker())return;if(validate_number())return;senddata(signup_name,signup_email,signup_password,signup_mobileNumber);});function change_placeholder(){const _0x4e4ebf=_0x30f1fd;document[_0x4e4ebf(0x9e)](_0x4e4ebf(0x90))[_0x4e4ebf(0xaa)]='required!',document['getElementById']('fullname')[_0x4e4ebf(0xb8)][_0x4e4ebf(0x9f)](_0x4e4ebf(0xa1)),document['getElementById'](_0x4e4ebf(0xb4))[_0x4e4ebf(0xaa)]=_0x4e4ebf(0x9d),document[_0x4e4ebf(0x9e)]('signup_email')[_0x4e4ebf(0xb8)][_0x4e4ebf(0x9f)](_0x4e4ebf(0xa1)),document[_0x4e4ebf(0x9e)]('mobileNumber')[_0x4e4ebf(0xaa)]=_0x4e4ebf(0x9d),document['getElementById']('mobileNumber')[_0x4e4ebf(0xb8)][_0x4e4ebf(0x9f)](_0x4e4ebf(0xa1)),document[_0x4e4ebf(0x9e)](_0x4e4ebf(0xab))[_0x4e4ebf(0xaa)]=_0x4e4ebf(0x9d),document[_0x4e4ebf(0x9e)](_0x4e4ebf(0xab))[_0x4e4ebf(0xb8)][_0x4e4ebf(0x9f)]('placeholder-red-400');}function email_checker(_0x6fced1){const _0x2b1226=_0x30f1fd;try{return temp=_0x6fced1[_0x2b1226(0xa7)]('@'),temp[0x1]==_0x2b1226(0xbe)&&temp[_0x2b1226(0x97)]===0x2?0x1:(document[_0x2b1226(0x9e)]('mobileNumber')[_0x2b1226(0x99)]['classList'][_0x2b1226(0xa0)](_0x2b1226(0xac),_0x2b1226(0xb5)),document['getElementById'](_0x2b1226(0xae))['classList'][_0x2b1226(0xa0)](_0x2b1226(0xba),_0x2b1226(0xad)),document[_0x2b1226(0x9e)](_0x2b1226(0xae))[_0x2b1226(0x9c)]='Please\x20enter\x20the\x20valid\x20cuchd\x20email!',0x0);}catch(_0x2533f1){return document[_0x2b1226(0x9e)](_0x2b1226(0xb0))[_0x2b1226(0x99)]['classList'][_0x2b1226(0xa0)](_0x2b1226(0xac),'mb-2'),document[_0x2b1226(0x9e)](_0x2b1226(0xae))[_0x2b1226(0xb8)][_0x2b1226(0xa0)](_0x2b1226(0xba),_0x2b1226(0xad)),document[_0x2b1226(0x9e)](_0x2b1226(0xae))['innerText']=_0x2b1226(0x91),0x0;}}function _0x210a(_0x5924fd,_0x577249){const _0x5077ce=_0x5077();return _0x210a=function(_0x210a98,_0x119ac7){_0x210a98=_0x210a98-0x8f;let _0x21e09e=_0x5077ce[_0x210a98];return _0x21e09e;},_0x210a(_0x5924fd,_0x577249);}function password_checker(){const _0x2751f2=_0x30f1fd;return signup_password===signup_password_confirm?0x1:(document[_0x2751f2(0x9e)](_0x2751f2(0xb0))[_0x2751f2(0x99)]['classList'][_0x2751f2(0xa0)](_0x2751f2(0xac),'mb-2'),document[_0x2751f2(0x9e)](_0x2751f2(0xae))[_0x2751f2(0xb8)]['replace']('hidden',_0x2751f2(0xad)),document['getElementById'](_0x2751f2(0xae))[_0x2751f2(0x9c)]=_0x2751f2(0x94),0x0);}function _0x5077(){const _0x9413cd=['fill-all-field','addEventListener','mobileNumber','stringify','7qRDTLm','trim','signup_email','mb-2','click','3294PygEEG','classList','href','hidden','5987012gMeWwo','application/json','80ETtTxI','cuchd.in','toLowerCase','fullname','Invalid\x20Email\x20format!','/signup','12571614NdAAdJ','password\x20fields\x20dont\x20match','value','signup_button','length','Name\x20is\x20too\x20short!','parentNode','message','10215AMNQWu','innerText','required!','getElementById','add','replace','placeholder-red-400','180aWvmYB','24717EmVYUv','Some\x20error\x20occured\x20please\x20try\x20after\x20some\x20time','10867088bVEYdT','1025688RKxGCn','split','1214301xpOJMZ','alert','placeholder','create-password','mb-6','flex'];_0x5077=function(){return _0x9413cd;};return _0x5077();}function validate_number(){const _0x18e3e5=_0x30f1fd;return signup_mobileNumber[_0x18e3e5(0x97)]==0xa&&isNaN(signup_mobileNumber)?0x1:0x0;}async function senddata(_0x1e85cb,_0x121ee6,_0x3bcbe8,_0x9ed09f){const _0x4ac004=_0x30f1fd;try{const _0x4bc634=await fetch(_0x4ac004(0x92),{'method':'POST','headers':{'Content-Type':_0x4ac004(0xbc)},'body':JSON[_0x4ac004(0xb1)]({'email':_0x121ee6,'name':_0x1e85cb,'password':_0x3bcbe8,'number':_0x9ed09f})});if(_0x4bc634['ok']){const _0x45e2bb=await _0x4bc634['json']();_0x45e2bb['success']?window['location'][_0x4ac004(0xb9)]='/':window[_0x4ac004(0xa9)](_0x45e2bb[_0x4ac004(0x9a)]);}else window[_0x4ac004(0xa9)](_0x4ac004(0xa4));}catch(_0x2c5c11){window[_0x4ac004(0xa9)]('Some\x20error\x20occured\x20please\x20try\x20again\x20after\x20some\x20time');}}
+// to get data from sign up page
+let signup_name = null;
+let signup_email = null;
+let signup_password = null;
+let signup_password_confirm = null;
+let signup_mobileNumber = null;
+document.getElementById("signup_button").addEventListener("click", () => {
+  signup_name = document.getElementById("fullname").value.trim();
+  signup_email = document
+    .getElementById("signup_email")
+    .value.trim()
+    .toLowerCase();
+  signup_password = document.getElementById("create-password").value.trim();
+  signup_mobileNumber = document.getElementById("mobileNumber").value.trim();
+  signup_password_confirm = document
+    .getElementById("confirm-password")
+    .value.trim();
+  if (
+    !signup_email ||
+    !signup_mobileNumber ||
+    !signup_name ||
+    !signup_password ||
+    !signup_password_confirm
+  ) {
+    change_placeholder();
+    fieldVisible()
+    return;
+  }
+  console.log("yes1")
+  if (signup_name.length < 5) {
+    fieldVisible("Name is too short!")
+    document.getElementById("fullname").value = "";
+    return;
+  }
+  console.log('yes2')
+  if (!email_checker(signup_email)) {
+    return;
+  }
+  console.log("yes3")
+  if (!password_checker()) {
+    return;
+  }
+  console.log("yes4")
+  if (validate_number()) {
+    return;
+  }
+  console.log("yes5")
+  senddata(signup_name,signup_email,signup_password,signup_mobileNumber);
+});
+// function to change the place holder
+function change_placeholder() {
+  document.getElementById("fullname").placeholder = "required!";
+  document.getElementById("fullname").classList.add("placeholder-red-400");
+  document.getElementById("signup_email").placeholder = "required!";
+  document.getElementById("signup_email").classList.add("placeholder-red-400");
+  document.getElementById("mobileNumber").placeholder = "required!";
+  document.getElementById("mobileNumber").classList.add("placeholder-red-400");
+  document.getElementById("create-password").placeholder = "required!";
+  document
+    .getElementById("create-password")
+    .classList.add("placeholder-red-400");
+}
+
+// function to check email is of valid type
+function email_checker(email) {
+  try {
+    temp = email.split("@");
+    if (temp[1] == "cuchd.in" && temp.length === 2) {
+      return 1;
+    } else {
+      fieldVisible("Please enter the valid cuchd email!")
+      return 0;
+    }
+  } catch (error) {
+    fieldVisible("Invalid Email format!")
+    return 0;
+  }
+}
+// function to check both password match
+function password_checker() {
+  if (signup_password === signup_password_confirm) {
+    return 1;
+  } else {
+    fieldVisible("password fields dont match")
+    return 0;
+  }
+}
+// function to check mobile number length is 10
+function validate_number() {
+    if (signup_mobileNumber.length != 10 || isNaN(signup_mobileNumber)) {
+        fieldVisible("Invalid mobile number!")
+        return 1;
+      }
+      return 0;    
+}
+// function to send data to backend
+async function senddata(
+  signup_name,
+  signup_email,
+  signup_password,
+  signup_mobileNumber
+) {
+  try {
+    const response = await fetch('/signup', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: signup_email,
+        name: signup_name,
+        password: signup_password,
+        number: signup_mobileNumber,
+      }),
+    });
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        console.log("data sent successfully");
+        window.location.href = "/";
+      } else {
+        window.alert(data.message)
+      }
+    }
+    else{
+      window.alert("Some error occured please try after some time")
+    }
+  } catch (error) { 
+    window.alert("Some error occured please try again after some time")
+  }
+}
+
+// function to make fill-all-field visible
+function fieldVisible(message=""){
+    document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
+    document.getElementById("fill-all-field").classList.replace("hidden","flex")
+    document.getElementById("fill-all-field").innerText = message;
+}
