@@ -4,7 +4,7 @@ import path from "path";
 import mongoose from "mongoose";
 const app = express();
 import { fileURLToPath } from "url";
-const port = 3001;
+const port = 10000 || 3001;
 
 // for protecting /home directory without login
 let check1 = null;
