@@ -4,7 +4,7 @@ import path from "path";
 import mongoose from "mongoose";
 const app = express();
 import { fileURLToPath } from "url";
-const port = 10000 || 3001;
+const PORT = process.env.PORT || 3001;
 
 // for protecting /home directory without login
 let check1 = null;
@@ -212,6 +212,6 @@ app.post("/home", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
 });
