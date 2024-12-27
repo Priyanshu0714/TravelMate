@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="./output.css" rel="stylesheet" />
-  <link rel="icon" href="/images/favicon.svg">
+  <link rel="icon" href="/images/favicon.svg" />
   <title>TravelMate</title>
   <!-- poppins by google font -->
   <!-- Poppins font by google fonts -->
@@ -14,12 +14,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
-  
 </head>
 
 <body class="font-poppins overflow-y-scroll flex flex-col relative">
   <!-- for the first header part -->
-  <div id="part1" class="part1 w-full h-[70vh] ">
+  <div id="part1" class="part1 w-full h-[70vh]">
     <div class="navigation-bar h-[10%] w-full flex justify-between items-center">
       <!-- left and right side -->
       <div id="logo" class="left-side h-full w-fit flex items-center p-3 cursor-pointer">
@@ -30,7 +29,7 @@
         </svg>
       </div>
       <div
-        class="right-side h-full w-fit flex justify-center items-center text-black text-[14px] font-medium p-3 gap-6 ">
+        class="right-side h-full w-fit flex justify-center items-center text-black text-[14px] font-medium p-3 gap-6">
         <div class="right-side-parts">
           <button id="features">Features</button>
         </div>
@@ -45,7 +44,8 @@
         </div>
       </div>
     </div>
-    <div class="part1-content h-[90%] w-full flex flex-shrink-0 items-center justify-center flex-col border border-gray-300 ">
+    <div
+      class="part1-content h-[90%] w-full flex flex-shrink-0 items-center justify-center flex-col border border-gray-300">
       <div class="w-[50%] h-full flex items-center justify-center flex-col gap-3 max-xl:w-[80%] max-sm:w-[95%]">
         <div class="part1-heading font-bold text-center text-5xl max-md:text-4xl max-sm:text-3xl">
           Never Travel Alone Again
@@ -84,7 +84,9 @@
               type="date" placeholder="Pick a Date" onclick="this.showPicker()" onblur="(this.type='text')"
               onfocus="(this.type='date')" />
           </div>
-          <div id="search-details-req" class="text-red-500 mt-1 hidden">Fill the above field</div>
+          <div id="search-details-req" class="text-red-500 mt-1 hidden">
+            Fill the above field
+          </div>
           <button id="search-button"
             class="h-9 w-[90%] border border-gray-300 p-3 mt-3 mb-4 flex items-center justify-center rounded-lg bg-black text-white text-sm gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" viewBox="0 0 512 512">
@@ -102,15 +104,16 @@
   <!-- this part is exclusive for search only -->
   <div id="part-hidden"
     class="p-20 bg-red h-auto hidden justify-center items-center flex-col gap-20 border border-gray-300">
-    <div class="text-5xl font-semibold tracking-tight">Matching Travelers</div>
-    <div id="create-matching-travellers" class="flex justify-center items-center flex-wrap gap-10 flex-row">
-
+    <div class="text-5xl font-semibold tracking-tight">
+      Matching Travelers
+    </div>
+    <div id="create-matching-travellers" class="flex justify-center items-center flex-wrap gap-10 flex-row-reverse">
     </div>
   </div>
 
   <div id="part2"
     class="part2 w-full h-[55vh] bg-gray-200 flex items-center justify-center flex-col max-md:h-auto flex-shrink-0">
-    <div class="part2-heading text-5xl font-semibold tracking-tight max-md:pt-10 ">
+    <div class="part2-heading text-5xl font-semibold tracking-tight max-md:pt-10">
       Key Features
     </div>
     <div
@@ -194,7 +197,7 @@
       </div>
     </div>
     <div
-      class="part3-image h-full w-[40%] border border-red-950 bg-[url('/images/login-page.avif')] bg-no-repeat bg-cover bg-center rounded-3xl max-md:hidden ">
+      class="part3-image h-full w-[40%] border border-red-950 bg-[url('/images/login-page.avif')] bg-no-repeat bg-cover bg-center rounded-3xl max-md:hidden">
     </div>
   </div>
   <div id="part4"
@@ -207,42 +210,46 @@
   </div>
 
   <!-- this part is for the popup window so details input -->
-  <div id="pop-up" class=" inset-0 hidden flex-shrink-0 justify-center items-center bg-black bg-opacity-50 fixed ">
+  <div id="pop-up" class="inset-0 hidden flex-shrink-0 justify-center items-center bg-black bg-opacity-50 fixed">
     <div id="pop-up-details"
-      class="h-[51%] w-[50%]  border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar max-lg:w-[70%] max-lg:h-[60%] max-sm:w-[85%] flex items-between justify-between flex-col">
+      class="h-[51%] w-[50%] border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar max-lg:w-[70%] max-lg:h-[60%] max-sm:w-[85%] flex items-between justify-between flex-col">
       <!-- inner content inside box -->
       <div class="flex items-center justify-between flex-row">
-        <div class="pop-up-heading font-bold text-xl">No Matching Travelling Found!!</div>
-        <div id="pop-up-close" class="pop-up-close p-2  rounded-full hover:bg-gray-100">
-          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
-            viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <div class="pop-up-heading font-bold text-xl">
+          No Matching Travelling Found!!
+        </div>
+        <div id="pop-up-close" class="p-2 rounded-full hover:bg-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512">
+            <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
             <path fill="#000000"
               d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
           </svg>
         </div>
       </div>
-      <div class="text-sm text-wrap max-sm:text-[13px]">We couldn't find any travelers matching your criteria. Would you
-        like to submit
-        your travel details for future matches?
+      <div class="text-sm text-wrap max-sm:text-[13px]">
+        We couldn't find any travelers matching your criteria. Would you like
+        to submit your travel details for future matches?
       </div>
-      <div class="font-bold" style="margin-top: 15px;">Add Your Travel Details</div>
+      <div class="font-bold" style="margin-top: 15px">
+        Add Your Travel Details
+      </div>
       <!-- basic traveller details -->
       <div id="basic-traveller-detail" data-attribute="1"
-        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3 ">
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3">
         <div class="flex flex-row justify-between items-center w-full h-full relative">
           <div id="temp1" class="w-full m-3">Basic Details</div>
           <div id="right-arrow1"
             class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
-              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
             </svg>
           </div>
           <!-- close button svg -->
-          <div id="close-button1" class="hidden  px-5 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
-              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <div id="close-button1" class="hidden px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
             </svg>
@@ -250,112 +257,128 @@
         </div>
         <!-- name will be taken from database -->
         <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
-          <input
-            id="basic-details-name" class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
-            name="user_name" placeholder="Enter Name"></div>
+          <input id="basic-details-name"
+            class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
+            name="user_name" placeholder="Enter Name" />
+        </div>
         <!-- for age -->
         <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
-          <input
-            id="basic-details-age" class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
-            name="age" placeholder="Enter age"></div>
+          <input id="basic-details-age"
+            class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
+            name="age" placeholder="Enter age" />
+        </div>
         <!-- for gender -->
-        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 text-gray-500 rounded-lg text-[15px]"><select
-            id="basic-details-gender"
-            class="h-full w-full outline-none rounded-lg p-2 focus:outline-black" name="gender">
+        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 text-gray-500 rounded-lg text-[15px]">
+          <select id="basic-details-gender" class="h-full w-full outline-none rounded-lg p-2 focus:outline-black"
+            name="gender">
             <option value="" disabled selected>Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-          </select></div>
+          </select>
+        </div>
       </div>
       <!-- travel preference -->
       <div id="basic-traveller-detail" data-attribute="2"
-        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3 ">
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-3">
         <div class="flex flex-row justify-between items-center w-full h-full relative">
           <div id="temp2" class="w-full m-3">Travel Details</div>
           <div id="right-arrow2"
             class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
-              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
             </svg>
           </div>
           <!-- close button svg -->
-          <div id="close-button2" class="hidden  px-5 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
-              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <div id="close-button2" class="hidden px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
             </svg>
           </div>
         </div>
         <!-- for departure -->
-        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
-            id="travel-details-departure" class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black"
-            type="text" name="age" placeholder="Enter Departure"></div>
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
+          <input id="travel-details-departure"
+            class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black" type="text"
+            name="age" placeholder="Enter Departure" />
+        </div>
         <!-- for destination -->
-        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
-            id="travel-details-destination" class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black"
-            type="text" name="age" placeholder="Enter Destination"></div>
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
+          <input id="travel-details-destination"
+            class="h-full w-full outline-none p-3 rounded-lg placeholder:text-gray-500 focus:outline-black" type="text"
+            name="age" placeholder="Enter Destination" />
+        </div>
         <!-- for date -->
-        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]"><input
-            id="travel-details-date" class="h-full w-full outline-none placeholder:text-gray-500 p-3 rounded-lg focus:outline-black]" type="date"
-            placeholder="Pick a Date" onclick="this.showPicker()" onblur="(this.type='text')" onfocus="(this.type='date')" /></div>
-
+        <div class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
+          <input id="travel-details-date"
+            class="h-full w-full outline-none placeholder:text-gray-500 p-3 rounded-lg focus:outline-black]" type="date"
+            placeholder="Pick a Date" onclick="this.showPicker()" onblur="(this.type='text')"
+            onfocus="(this.type='date')" />
+        </div>
       </div>
       <!-- Intrest & Preferences -->
       <div id="basic-traveller-detail" data-attribute="3"
-        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-2 ">
+        class="w-[90%] h-auto border border-gray-400 flex items-start justify-center flex-col rounded-lg gap-2">
         <div class="flex flex-row justify-between items-center w-full h-full relative">
           <div id="temp3" class="w-full m-3">Interest & Preferences</div>
           <div id="right-arrow3"
             class="flex px-5 bg-gray-200 items-center absolute right-0 h-full w-auto rounded-r-lg cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5"
-              viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
             </svg>
           </div>
           <!-- close button svg -->
-          <div id="close-button3" class="hidden  px-5 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5"
-              viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <div id="close-button3" class="hidden px-5 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="10.5" viewBox="0 0 384 512">
+              <!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#000000"
                 d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
             </svg>
           </div>
         </div>
         <!-- for gender preferences -->
-        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-[15px]"><select
-            id="gender-preferences" class="h-full w-full outline-none rounded-lg p-2 text-gray-500 focus:outline-black"
-            name="gender">
+        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-[15px]">
+          <select id="gender-preferences"
+            class="h-full w-full outline-none rounded-lg p-2 text-gray-500 focus:outline-black" name="gender">
             <option value="" disabled selected>Preferred Gender</option>
             <option value="Male">Male Only</option>
             <option value="Female">Female Only</option>
             <option value="Any">Any</option>
-          </select></div>
+          </select>
+        </div>
         <!-- for communication -->
-        <div class="hidden req text-[12px] mx-4">Your Communication Preference Detail</div>
+        <div class="hidden req text-[12px] mx-4">
+          Your Communication Preference Detail
+        </div>
         <div
-          class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px] justify-center items-center flex-col ">
-          <input id="communication-details" class="placeholder:text-gray-500 h-full w-full outline-none p-3 rounded-lg focus:outline-black"
-            type="text" name="age" placeholder="(email/phone_number/social_media)">
+          class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px] justify-center items-center flex-col">
+          <input id="communication-details"
+            class="placeholder:text-gray-500 h-full w-full outline-none p-3 rounded-lg focus:outline-black" type="text"
+            name="age" placeholder="(email/phone_number/social_media)" />
         </div>
       </div>
       <!-- this part is shown when all fields are not filled -->
-      <div id="fill-the-above-field" class="text-red-600 hidden">Please fill the above field</div>
+      <div id="fill-the-above-field" class="text-red-600 hidden">
+        Please fill the above field
+      </div>
       <!-- summit details button for popup -->
       <button id="pop-up-submit"
         class="w-full h-9 border border-gray-400 bg-black text-white flex items-center justify-center rounded-lg"
-        style="margin-top:20px; padding: 10px 0;">Submit Details</button>
+        style="margin-top: 20px; padding: 10px 0">
+        Submit Details
+      </button>
     </div>
     <div id="pop-up-animation"
       class="h-[51%] w-[50%] border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar hidden justify-center items-center">
-      <iframe class="object-cover h-full w-full "
+      <iframe class="object-cover h-full w-full"
         src="https://lottie.host/embed/18aad141-0198-4668-a6b8-d5d839af06c4/AFFnFod1BK.lottie"></iframe>
     </div>
   </div>
-
 
   <script src="/js/home.js"></script>
 </body>

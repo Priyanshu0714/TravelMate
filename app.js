@@ -1,6 +1,5 @@
 // this file is for the backend development
 import express from "express";
-import fs from "fs";
 import path from "path";
 import mongoose from "mongoose";
 const app = express();
@@ -109,14 +108,26 @@ const traveller = mongoose.model(
   traveller_details,
   "traveller_details"
 );
+// function to delete the previous date automaticly
+async function deletedate(){
+  const date=new Date;
+  const today=date.toISOString().split("T")[0]
+  await traveller.deleteMany({date:{$lt:today}}).then(() => {
+        console.log("Date deleted successfully")
+    })
+    .catch(error => {
+      console.error("Error fetching traveller data:", error);
+    });
+}
 
-app.get('/home',(req,res)=>{
-    if(check1&&check2){
-        res.render('home')
-    }
-    else{
-        res.render('protect-home')
-    }
+app.get("/home",async(req,res)=>{
+  if(check1&&check2){
+    await deletedate();
+    res.render("home")
+  }
+  else{
+    res.render("protect-home")
+  }
 })
 
 // for getting the travller details
