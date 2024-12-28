@@ -68,15 +68,16 @@ document.getElementById("search-button").addEventListener("click", async () => {
     return;
   }
   if (!check_date(date)) {
-    if (
-      document.getElementById("search-details-req").classList.contains("hidden")
-    ) {
+    if (document.getElementById("search-details-req").classList.contains("hidden")) {
       document.getElementById("search-details-req").classList.remove("hidden");
     }
     document.getElementById("search-details-req").innerText =
-      "Select a valid date";
+      "Select a date within 3 months";
     searchButton.disabled = false;
     return;
+  }
+  if (!document.getElementById("search-details-req").classList.contains("hidden")) {
+    document.getElementById("search-details-req").classList.add("hidden");
   }
 
   // for sending data to backend
@@ -156,7 +157,10 @@ document.getElementById("search-button").addEventListener("click", async () => {
 function check_date(date) {
   const d = new Date();
   const current_date =d.toISOString().split("T")[0]
-  if(date>=current_date){
+  // for future month
+  d.setMonth(d.getMonth()+3);
+  const future_date=d.toISOString().split("T")[0]
+  if(date>=current_date && date<=future_date){
     return 1;
   }
   else{
@@ -164,7 +168,7 @@ function check_date(date) {
   }
 }
 
-// // // main popup close
+// // main popup close
 document.getElementById("pop-up-close").addEventListener("click", () => {
   document.getElementById("pop-up").classList.replace("flex", "hidden");
 });
@@ -278,6 +282,14 @@ document.getElementById("pop-up-submit").addEventListener("click", async () => {
       "Incorrect age type!";
     return;
   }
+  if (!check_date(travel_detail_date)) {
+    document
+      .getElementById("fill-the-above-field")
+      .classList.replace("hidden", "flex");
+    document.getElementById("fill-the-above-field").innerText =
+      "Select date within 3 months!";
+    return;
+  }
   // to fetch and send data
   try {
     const response = await fetch("/home", {
@@ -309,7 +321,8 @@ document.getElementById("pop-up-submit").addEventListener("click", async () => {
           document.getElementById("pop-up").classList.add("hidden");
         }, 3000);
       } else {
-        console.log("Some error occured");
+        document.getElementById("pop-up-submit").innerText="User already exists"
+        document.getElementById("pop-up-submit").classList.replace("bg-black","bg-red-500")
         return;
       }
     } else {

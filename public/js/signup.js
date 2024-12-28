@@ -117,7 +117,8 @@ async function senddata(
         console.log("data sent successfully");
         window.location.href = "/";
       } else {
-        window.alert(data.message)
+        fieldVisible(data.message)
+        return;
       }
     }
     else{

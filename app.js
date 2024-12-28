@@ -16,7 +16,10 @@ const __dirname = path.dirname(__filename);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/favicon.ico', express.static(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(
+  "/favicon.ico",
+  express.static(path.join(__dirname, "public", "favicon.ico"))
+);
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -77,6 +80,12 @@ app.post("/signup", async (req, res) => {
   if (!name && !email && !password && !number) {
     return res.status(400).send("Details required");
   }
+  const check_repeat_email = await User.find({ email: email });
+  if (check_repeat_email.length > 0) {
+    return res
+      .status(200)
+      .json({ success: false, message: "Email already exists" });
+  }
   try {
     const newuser = new User({
       name: name,
@@ -92,8 +101,9 @@ app.post("/signup", async (req, res) => {
 });
 
 // scheme for home page
-const traveller_details = new mongoose.Schema({type:String,
-  name:String,
+const traveller_details = new mongoose.Schema({
+  type: String,
+  name: String,
   age: Number,
   gender: String,
   departure: String,
@@ -109,32 +119,33 @@ const traveller = mongoose.model(
   "traveller_details"
 );
 // function to delete the previous date automaticly
-async function deletedate(){
-  const date=new Date;
-  const today=date.toISOString().split("T")[0]
-  await traveller.deleteMany({date:{$lt:today}}).then(() => {
-        console.log("Date deleted successfully")
+async function deletedate() {
+  const date = new Date();
+  const today = date.toISOString().split("T")[0];
+  await traveller
+    .deleteMany({ date: { $lt: today } })
+    .then(() => {
+      console.log("Date deleted successfully");
     })
-    .catch(error => {
+    .catch((error) => {
       console.error("Error fetching traveller data:", error);
     });
 }
 
-app.get("/home",async(req,res)=>{
-  if(check1&&check2){
+app.get("/home", async (req, res) => {
+  if (check1 && check2) {
     await deletedate();
-    res.render("home")
+    res.render("home");
+  } else {
+    res.render("protect-home");
   }
-  else{
-    res.render("protect-home")
-  }
-})
+});
 
 // for getting the travller details
 app.post("/home", async (req, res) => {
   const { type, ...rest } = req.body;
-  
-  switch(type) {
+
+  switch (type) {
     case "popup": {
       const {
         name,
@@ -159,7 +170,19 @@ app.post("/home", async (req, res) => {
       ) {
         return res.status(400).send("Unable to fetch data at the moment");
       }
-
+      const new_traveller_exists = await traveller.find({
+        name: name,
+        age: age,
+        gender: gender,
+        departure: departure,
+        destination: destination,
+        date: date,
+        gender_preference: gender_preference,
+        communication_preferences: communication_preferences,
+      });
+      if(new_traveller_exists.length>0){
+        return res.status(200).json({ success: false, message: "User already exists" });
+      }
       try {
         const new_traveller = new traveller({
           name,
@@ -192,10 +215,12 @@ app.post("/home", async (req, res) => {
         });
 
         if (search_users.length > 0) {
-          const matchedUsers = search_users.filter(i => i.date === date);
+          const matchedUsers = search_users.filter((i) => i.date === date);
 
           if (matchedUsers.length > 0) {
-            return res.status(200).json({ message: true, records: matchedUsers });
+            return res
+              .status(200)
+              .json({ message: true, records: matchedUsers });
           } else {
             return res.status(200).json({ message: false });
           }
