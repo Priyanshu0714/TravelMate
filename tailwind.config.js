@@ -13,8 +13,16 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
       },
       screens: {
-        'xl':'1246px',
-
+        'xl': '1246px',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite',
       },
     },
   },

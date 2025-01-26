@@ -1,1 +1,78 @@
-const _0x1ddc07=_0x2774;(function(_0x2ef7dd,_0x3fecbc){const _0x264d8b=_0x2774,_0x43e07f=_0x2ef7dd();while(!![]){try{const _0x4e8cc3=parseInt(_0x264d8b(0x1ba))/0x1*(-parseInt(_0x264d8b(0x19e))/0x2)+parseInt(_0x264d8b(0x1c3))/0x3+-parseInt(_0x264d8b(0x1b5))/0x4*(-parseInt(_0x264d8b(0x1ad))/0x5)+parseInt(_0x264d8b(0x1c1))/0x6+parseInt(_0x264d8b(0x1b4))/0x7+parseInt(_0x264d8b(0x1c5))/0x8+-parseInt(_0x264d8b(0x1b6))/0x9;if(_0x4e8cc3===_0x3fecbc)break;else _0x43e07f['push'](_0x43e07f['shift']());}catch(_0x13d96e){_0x43e07f['push'](_0x43e07f['shift']());}}}(_0xd156,0xf321e));let signin_email=null,signin_password=null;document[_0x1ddc07(0x1a6)](_0x1ddc07(0x1a5))[_0x1ddc07(0x1c2)]('click',()=>{const _0x3a796e=_0x1ddc07;signin_email=document[_0x3a796e(0x1a6)](_0x3a796e(0x1a1))[_0x3a796e(0x1a3)][_0x3a796e(0x1bd)]()['trim'](),signin_password=document[_0x3a796e(0x1a6)]('password')[_0x3a796e(0x1a3)][_0x3a796e(0x1bc)]();if(!signin_email||!signin_password){change_placeholder();return;}if(!email_checker(signin_email)){document[_0x3a796e(0x1a6)](_0x3a796e(0x1a1))[_0x3a796e(0x1a3)]='';return;}console[_0x3a796e(0x1ae)]('data\x20checked'),sendData(signin_email,signin_password);});function _0xd156(){const _0x1ec279=['email','location','value','Login\x20SUccessfull','submit-button','getElementById','alert','POST','json','replace','classList','hidden','10vrkVFz','log','length','mb-6','split','cuchd.in','fill-all-field','3752910GxjSyj','780812PCspZn','13331682SObGtL','placeholder','placeholder-red-400','Some\x20error\x20occured.\x20Please\x20try\x20after\x20some\x20time','64633BHeHCh','stringify','trim','toLowerCase','Invalid\x20Email\x20format!','flex','innerText','2972298LwPCyq','addEventListener','2448081CjeKut','add','5533224MLrZyE','href','Invalid\x20Credentails','required!','application/json','password','14sZDIGe','password-box','success'];_0xd156=function(){return _0x1ec279;};return _0xd156();}function change_placeholder(){const _0x2a5b35=_0x1ddc07;document[_0x2a5b35(0x1a6)](_0x2a5b35(0x1a1))[_0x2a5b35(0x1b7)]=_0x2a5b35(0x1c8),document['getElementById']('email')[_0x2a5b35(0x1ab)][_0x2a5b35(0x1c4)](_0x2a5b35(0x1b8)),document[_0x2a5b35(0x1a6)](_0x2a5b35(0x1ca))['placeholder']=_0x2a5b35(0x1c8),document[_0x2a5b35(0x1a6)](_0x2a5b35(0x1ca))[_0x2a5b35(0x1ab)]['add'](_0x2a5b35(0x1b8));}function email_checker(_0x2d9be5){const _0x25ebe1=_0x1ddc07;try{return temp=_0x2d9be5[_0x25ebe1(0x1b1)]('@'),temp[0x1]==_0x25ebe1(0x1b2)&&temp[_0x25ebe1(0x1af)]===0x2?0x1:(document['getElementById'](_0x25ebe1(0x1b3))[_0x25ebe1(0x1c0)]='Please\x20enter\x20the\x20valid\x20cuchd\x20email!',document[_0x25ebe1(0x1a6)](_0x25ebe1(0x1b3))[_0x25ebe1(0x1ab)]['replace'](_0x25ebe1(0x1ac),_0x25ebe1(0x1bf)),document[_0x25ebe1(0x1a6)](_0x25ebe1(0x19f))[_0x25ebe1(0x1ab)][_0x25ebe1(0x1aa)](_0x25ebe1(0x1b0),'mb-2'),0x0);}catch(_0x3df634){return document[_0x25ebe1(0x1a6)](_0x25ebe1(0x1b3))['innerText']=_0x25ebe1(0x1be),document[_0x25ebe1(0x1a6)](_0x25ebe1(0x1b3))['classList'][_0x25ebe1(0x1aa)](_0x25ebe1(0x1ac),_0x25ebe1(0x1bf)),0x0;}}function _0x2774(_0x289405,_0x50ea1f){const _0xd15689=_0xd156();return _0x2774=function(_0x277414,_0x1db62b){_0x277414=_0x277414-0x19e;let _0x1e99a3=_0xd15689[_0x277414];return _0x1e99a3;},_0x2774(_0x289405,_0x50ea1f);}async function sendData(_0x4dcd19,_0x2fbd23){const _0x315a67=_0x1ddc07;try{const _0xa9085f=await fetch(window[_0x315a67(0x1a2)][_0x315a67(0x1c6)],{'method':_0x315a67(0x1a8),'headers':{'Content-Type':_0x315a67(0x1c9)},'body':JSON[_0x315a67(0x1bb)]({'email':_0x4dcd19,'password':_0x2fbd23})});if(_0xa9085f['ok']){const _0x3257f2=await _0xa9085f[_0x315a67(0x1a9)]();_0x3257f2[_0x315a67(0x1a0)]?(console[_0x315a67(0x1ae)](_0x315a67(0x1a4)),window[_0x315a67(0x1a2)][_0x315a67(0x1c6)]='/home'):(document[_0x315a67(0x1a6)](_0x315a67(0x1b3))['innerText']=_0x3257f2['message'],document[_0x315a67(0x1a6)](_0x315a67(0x1b3))[_0x315a67(0x1ab)]['replace'](_0x315a67(0x1ac),'flex'));}else document[_0x315a67(0x1a6)](_0x315a67(0x1b3))['innerText']=_0x315a67(0x1c7),document['getElementById'](_0x315a67(0x1b3))['classList'][_0x315a67(0x1aa)]('hidden',_0x315a67(0x1bf));}catch(_0x170d55){window[_0x315a67(0x1a7)](_0x315a67(0x1b9));}}
+// to get the data from signin page
+let signin_email=null
+let signin_password=null
+document.getElementById("submit-button").addEventListener("click",()=>{
+    signin_email=document.getElementById("email").value.toLowerCase().trim()
+    signin_password=document.getElementById("password").value.trim()
+    // to check if the values are null
+    if(!signin_email||!signin_password){
+        change_placeholder()
+        return;
+    }
+    if(!email_checker(signin_email)){
+        document.getElementById("email").value=""
+        return;
+    }
+    sendData(signin_email,signin_password);
+    
+})
+// function to change the placeholder 
+function change_placeholder(){
+    document.getElementById("email").placeholder="required!"
+        document.getElementById("email").classList.add("placeholder-red-400")
+        document.getElementById("password").placeholder="required!"
+        document.getElementById("password").classList.add("placeholder-red-400")
+}
+
+// function to check email is of valid type
+function email_checker(email){
+    try {
+        temp=email.split("@")
+        if(temp[1]=="cuchd.in" && temp.length===2){
+            return 1
+        }
+        else{
+            document.getElementById("fill-all-field").innerText="Please enter the valid cuchd email!"
+            document.getElementById("fill-all-field").classList.replace("hidden","flex")
+            document.getElementById("password-box").classList.replace("mb-6","mb-2")
+            return 0
+        }
+    }catch (error) {
+        document.getElementById("fill-all-field").innerText="Invalid Email format!"
+        document.getElementById("fill-all-field").classList.replace("hidden","flex")
+        return 0
+    }
+        
+}
+//to send data to backend
+async function sendData(signin_email,signin_password){
+    try {
+        const response= await fetch(window.location.href,{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                email:signin_email,
+                password:signin_password,
+            }),
+            
+        });
+        if(response.ok){
+            const data=await response.json()
+            if(data.success){
+                console.log("Login SUccessfull")
+                window.location.href="/home"
+            }
+            else{
+                document.getElementById("fill-all-field").innerText=data.message
+                document.getElementById("fill-all-field").classList.replace("hidden","flex")
+            }
+        }
+        else{
+            document.getElementById("fill-all-field").innerText="Invalid Credentails"
+            document.getElementById("fill-all-field").classList.replace("hidden","flex")
+        }
+        
+    } catch (error) {
+        window.alert("Some error occured. Please try after some time")
+    }
+}

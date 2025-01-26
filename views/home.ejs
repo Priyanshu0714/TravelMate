@@ -16,7 +16,7 @@
     rel="stylesheet" />
 </head>
 
-<body class="font-poppins overflow-y-scroll flex flex-col relative">
+<body class="font-poppins overflow-y-scroll flex flex-col relative flex-shrink-0">
   <!-- for the first header part -->
   <div id="part1" class="part1 w-full h-[70vh]">
     <div class="navigation-bar h-[10%] w-full flex justify-between items-center">
@@ -102,11 +102,126 @@
   <!-- this part is exclusive for search only -->
   <div id="part-hidden"
     class="p-20 bg-red h-auto hidden justify-center items-center flex-col gap-20 border border-gray-300">
-    <div class="text-5xl font-semibold tracking-tight">
-      Matching Travelers
+    <div id="matching-travellers-name" class="text-5xl font-semibold tracking-tight">
+      Matching Travellers
     </div>
     <div id="create-matching-travellers" class="flex justify-center items-center flex-wrap gap-10 flex-row-reverse">
+
     </div>
+    <div id="create-matching-travellers-skeleton"
+      class="hidden justify-center items-center flex-wrap gap-10 flex-row-reverse">
+      <!-- skeleton 1 -->
+      <div class="h-auto w-[400px] border border-gray-400 bg-gray-200 flex gap-5 flex-col rounded-lg p-4">
+        <div class="h-6 bg-gray-300 rounded w-3/4 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="h-4 bg-gray-300 rounded w-1/2 mt-2 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="space-y-2 mt-4">
+          <div class="h-4 bg-gray-300 rounded w-full relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-5/6 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-4/5 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+        </div>
+        <div class="h-8 bg-gray-300 rounded mt-3 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+      </div>
+      <!-- skeleton 2 -->
+      <div class="h-auto w-[400px] border border-gray-400 bg-gray-200 flex gap-5 flex-col rounded-lg p-4">
+        <div class="h-6 bg-gray-300 rounded w-3/4 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="h-4 bg-gray-300 rounded w-1/2 mt-2 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="space-y-2 mt-4">
+          <div class="h-4 bg-gray-300 rounded w-full relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-5/6 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-4/5 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+        </div>
+        <div class="h-8 bg-gray-300 rounded mt-3 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+      </div>
+      <!-- skeleton 3 -->
+      <div class="h-auto w-[400px] border border-gray-400 bg-gray-200 flex gap-5 flex-col rounded-lg p-4">
+        <div class="h-6 bg-gray-300 rounded w-3/4 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="h-4 bg-gray-300 rounded w-1/2 mt-2 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+        <div class="space-y-2 mt-4">
+          <div class="h-4 bg-gray-300 rounded w-full relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-5/6 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+          <div class="h-4 bg-gray-300 rounded w-4/5 relative overflow-hidden">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+            </div>
+          </div>
+        </div>
+        <div class="h-8 bg-gray-300 rounded mt-3 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-200 to-gray-300 transform translate-x-[-100%] animate-shimmer">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button id="enable-pop-up"
+      class="h-auto w-[400px] border border-gray-400 bg-gray-200 flex justify-center items-center gap-5 flex-col rounded-lg p-5">
+      <b>Not interested?</b>
+      Click to Add your own details
+    </button>
   </div>
 
   <div id="part2"
@@ -253,7 +368,7 @@
             </svg>
           </div>
         </div>
-        <!-- name will be taken from database -->
+        <!-- name -->
         <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px]">
           <input id="basic-details-name"
             class="h-full w-full outline-none p-3 rounded-lg focus:outline-black placeholder:text-gray-500" type="text"
@@ -339,8 +454,19 @@
             </svg>
           </div>
         </div>
+        <!-- for select travel type -->
+        <div class="hidden req mx-3 mb-2 h-auto w-[90%] border border-gray-300 text-gray-500 rounded-lg text-[15px]">
+          <select id="gender-preferences-traveltype"
+            class="h-full w-full outline-none rounded-lg p-2 focus:outline-black" name="travel_type">
+            <option value="" disabled selected>Travel Type</option>
+            <option value="Bus">Bus</option>
+            <option value="Train">Train</option>
+            <option value="Flight">Flight</option>
+            <option value="others">others</option>
+          </select>
+        </div>
         <!-- for gender preferences -->
-        <div class="hidden req mx-3 h-9 w-[90%] border border-gray-300 rounded-lg text-[15px]">
+        <div class="hidden req mx-3 h-auto w-[90%] border border-gray-300 rounded-lg text-[15px]">
           <select id="gender-preferences"
             class="h-full w-full outline-none rounded-lg p-2 text-gray-500 focus:outline-black" name="gender">
             <option value="" disabled selected>Preferred Gender</option>
@@ -354,16 +480,19 @@
           Your Communication Preference Detail
         </div>
         <div
-          class="hidden req mx-3 mb-2 h-9 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px] justify-center items-center flex-col">
+          class="hidden req mx-3 mb-2 h-10 w-[90%] border border-gray-300 rounded-lg text-gray-600 text-[15px] justify-center items-center flex-col">
           <input id="communication-details"
             class="placeholder:text-gray-500 h-full w-full outline-none p-3 rounded-lg focus:outline-black" type="text"
             name="age" placeholder="(email/phone_number/social_media)" />
         </div>
+
       </div>
+
       <!-- this part is shown when all fields are not filled -->
       <div id="fill-the-above-field" class="text-red-600 hidden">
         Please fill the above field
       </div>
+
       <!-- summit details button for popup -->
       <button id="pop-up-submit"
         class="w-full h-9 border border-gray-400 bg-black text-white flex items-center justify-center rounded-lg"
@@ -375,6 +504,38 @@
       class="h-[51%] w-[50%] border border-gray-400 rounded-lg p-7 bg-white space-y-2 overflow-y-scroll custom-scrollbar hidden justify-center items-center max-lg:w-[70%] max-lg:h-[60%] max-sm:w-[90%]">
       <iframe class="object-cover h-full w-full"
         src="https://lottie.host/embed/18aad141-0198-4668-a6b8-d5d839af06c4/AFFnFod1BK.lottie"></iframe>
+    </div>
+  </div>
+  <!-- media queries are remaining -->
+  <!-- for chatting popup -->
+  <div id="chat-box"
+    class="fixed border border-gray-300 bottom-7 right-6 h-14 w-14 rounded-full bg-white bg-blend-screen transition-all ease-in-out duration-500">
+    <div class="h-full w-full p-1 bg-[url('/images/chaticon.svg')] cursor-pointer bg-cover bg-no-repeat"></div>
+    <div class="h-full w-full p-1 items-center justify-center hidden rounded-lg flex-col gap-1 relative">
+      <!-- this part will contain messages -->
+      <div id="chatting-area"
+        class="w-0 h-[352px] rounded-lg transition-all ease-in-out duration-1000 border border-blue-400 pt-5 px-2 overflow-y-scroll space-y-1">
+        <!-- for right chat box -->
+        <div class="float-right clear-both border border-blue-400 p-2 rounded-lg max-w-[45%] flex justify-end">hello
+          right</div>
+        <div class="float-left clear-both border border-blue-400 p-2 rounded-lg max-w-[45%] flex justify-start">hello
+          left</div>
+      </div>
+      <div id="chatting-area-close" class="absolute top-1 right-5 h-auto w-auto cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" width="15"
+          viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+          <path fill="#000000"
+            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+        </svg>
+      </div>
+      <form id="chat-form" action="/chatbox" method="post" class="">
+        <input
+          class="w-0 h-8 border border-blue-400 rounded-lg transition-all ease-in-out duration-1000 invisible bottom-10 p-2 outline-none"
+          type="text" name="chatting" id="chat-input" placeholder="Enter your message">
+        <button id="chatting-button"
+          class="w-0 h-8 bg-blue-400 text-center rounded-lg transition-all ease-in-out duration-1000 invisible"
+          type="submit">Send</button>
+      </form>
     </div>
   </div>
 
