@@ -1,19 +1,53 @@
-# TravelMate
+# 🌍 TravelMate
 
-TravelMate is a web platform designed to connect travelers who prefer companionship during their journeys. By providing personal and travel details, users can find others traveling on the same route or store their information for future matches.
+TravelMate is a web platform designed for college students to find travel partners by connecting users traveling on similar routes. Users can enter their personal and travel details, search for matches, and get AI-generated recommendations if no direct match is found.
 
-## Features
+## 📸 Preview
 
-- **User Registration & Login**: Secure authentication for user accounts.
-- **Travel Matching**: Connect users traveling on the same route or with similar preferences.
-- **User Dashboard**: Manage personal and travel details.
-- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices.
-- **Privacy Focused**: Secure handling of user data and information.
+![TravelMate LoginPage](github-images/login.png)
+![TravelMate Preview](github-images/frontend.png)
+![TravelMate Recommendations](github-images/recommendation.png)
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Templating Engine**: EJS
+- **Frontend:**
+  - `EJS` (Embedded JavaScript Templating)
+  - `Tailwind CSS`
+  - `JavaScript`
 
+- **Backend:**
+  - `Node.js`
+  - `Express.js`
+
+- **Database:**
+  - `MongoDB`
+
+- **AI Integration:**
+  - `Llama Model API` for AI-based travel partner recommendations
+
+## ✨ Features
+
+- 👥 **Travel Partner Matching** – Find students traveling the same route.
+- 🤖 **AI Recommendations** – Suggests nearby matches using Llama Model API when direct matches aren't found.
+- 🔍 **Search & Filter** – Easily search for travel partners based on route, time, and preferences.
+- 📨 **CU Email Verification** – Only allows registrations using `@cuchd.in` emails for authenticity.
+- 🔒 **Secure Login & Signup** – User authentication with proper session handling.
+- 📊 **Dynamic Content Display** – Real-time updates and personalized results.
+- 📱 **Responsive Design** – Optimized for both desktop and mobile users.
+
+## 🧠 Future Enhancements
+
+- 🗺️ **Real-Time Location Sharing** *(Coming Soon)*
+- 📅 **Trip History & Planner** – Keep track of past and future trips.
+- 🔔 **Push Notifications** – Get alerts for new matches and trip updates.
+- 📱 **Mobile App Development** – Access TravelMate on the go.
+- 🧾 **Review System** – Rate and review travel partners.
+- 🛡️ **Enhanced Security Features** – Multi-factor authentication and user verification.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repository, make changes, and submit a pull request.
+
+---
+
+**Developed with ❤️ by Priyanshu Choudhary**

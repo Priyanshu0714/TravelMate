@@ -2,7 +2,7 @@ import OpenAI from "openai";
 
 const openai = new OpenAI({
   apiKey:
-    "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",
+    "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",
   baseURL: "https://integrate.api.nvidia.com/v1",
 });
 

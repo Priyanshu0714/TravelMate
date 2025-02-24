@@ -23,29 +23,29 @@ document.getElementById("signup_button").addEventListener("click", () => {
     !signup_password_confirm
   ) {
     change_placeholder();
-    document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
-    document.getElementById("fill-all-field").classList.replace("hidden","flex")
-    // window.alert("Please enter the required fields");
+    fieldVisible();
     return;
   }
+  console.log("yes1");
   if (signup_name.length < 5) {
-    document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
-    document.getElementById("fill-all-field").classList.replace("hidden","flex")
-    document.getElementById("fill-all-field").innerText="Name is too short!"
-    // window.alert("Name is too short!");
+    fieldVisible("Name is too short!");
     document.getElementById("fullname").value = "";
     return;
   }
+  console.log("yes2");
   if (!email_checker(signup_email)) {
     return;
   }
+  console.log("yes3");
   if (!password_checker()) {
     return;
   }
+  console.log("yes4");
   if (validate_number()) {
     return;
   }
-  senddata(signup_name,signup_email,signup_password,signup_mobileNumber);
+  console.log("yes5");
+  senddata(signup_name, signup_email, signup_password, signup_mobileNumber);
 });
 // function to change the place holder
 function change_placeholder() {
@@ -59,7 +59,6 @@ function change_placeholder() {
   document
     .getElementById("create-password")
     .classList.add("placeholder-red-400");
-  // window.alert("Please enter the correct values!")
 }
 
 // function to check email is of valid type
@@ -69,17 +68,11 @@ function email_checker(email) {
     if (temp[1] == "cuchd.in" && temp.length === 2) {
       return 1;
     } else {
-      document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
-      document.getElementById("fill-all-field").classList.replace("hidden","flex")
-      document.getElementById("fill-all-field").innerText="Please enter the valid cuchd email!"
-      // window.alert("Please enter the valid cuchd email!");
+      fieldVisible("Please enter the valid cuchd email!");
       return 0;
     }
   } catch (error) {
-    document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
-    document.getElementById("fill-all-field").classList.replace("hidden","flex")
-    document.getElementById("fill-all-field").innerText="Invalid Email format!"
-    // window.alert("Invalid Email format!");
+    fieldVisible("Invalid Email format!");
     return 0;
   }
 }
@@ -88,30 +81,27 @@ function password_checker() {
   if (signup_password === signup_password_confirm) {
     return 1;
   } else {
-    document.getElementById("mobileNumber").parentNode.classList.replace("mb-6","mb-2")
-    document.getElementById("fill-all-field").classList.replace("hidden","flex")
-    document.getElementById("fill-all-field").innerText="password fields dont match"
-    // window.alert("Create password and confirm password field dont match");
+    fieldVisible("password fields dont match");
     return 0;
   }
 }
 // function to check mobile number length is 10
 function validate_number() {
-  if (signup_mobileNumber.length == 10 && isNaN(signup_mobileNumber)) {
+  if (signup_mobileNumber.length != 10 || isNaN(signup_mobileNumber)) {
+    fieldVisible("Invalid mobile number!");
     return 1;
-  } else {
-    return 0;
   }
+  return 0;
 }
 // function to send data to backend
 async function senddata(
   signup_name,
   signup_email,
   signup_password,
-  signup_mobileNumber
+  signup_mobileNumber,
 ) {
   try {
-    const response = await fetch('/signup', {
+    const response = await fetch("/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -124,16 +114,25 @@ async function senddata(
     if (response.ok) {
       const data = await response.json();
       if (data.success) {
-        // console.log("data sent successfully");
+        console.log("data sent successfully");
         window.location.href = "/";
       } else {
-        window.alert(data.message)
+        fieldVisible(data.message);
+        return;
       }
+    } else {
+      window.alert("Some error occured please try after some time");
     }
-    else{
-      window.alert("Some error occured please try after some time")
-    }
-  } catch (error) { 
-    window.alert("Some error occured please try again after some time")
+  } catch (error) {
+    window.alert("Some error occured please try again after some time");
   }
+}
+
+// function to make fill-all-field visible
+function fieldVisible(message = "") {
+  document
+    .getElementById("mobileNumber")
+    .parentNode.classList.replace("mb-6", "mb-2");
+  document.getElementById("fill-all-field").classList.replace("hidden", "flex");
+  document.getElementById("fill-all-field").innerText = message;
 }

@@ -6,6 +6,7 @@ const app = express();
 import { fileURLToPath } from "url";
 import {recommendation_ai} from "./recommendation.js"
 import session from "express-session";
+import { timeStamp } from "console";
 const PORT = process.env.PORT || 3001;
 
 // Manually define __dirname
@@ -139,13 +140,13 @@ async function deletedate() {
 }
 
 app.get("/home", async (req, res) => {
-  // if (req.session.userid) {
-  //   await deletedate();
-  //   res.render("home");
-  // } else {
-  //   res.render("protect-home");
-  // }
-  res.render("home");
+  if (req.session.userid) {
+    await deletedate();
+    res.render("home");
+  } else {
+    res.render("protect-home");
+  }
+  // res.render("home");
 });
 
 // for getting the travller details
@@ -291,9 +292,6 @@ app.get("/logout", (req, res) => {
 });
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}`);
-});
 
 
 // for ai recommendation part
@@ -312,29 +310,96 @@ async function recommendation(departure,destination){
 }
 
 
+
+
+// schema and models for chatbox
+const message_schema = new mongoose.Schema({
+  senderId:String,
+  receiverId:String,
+  message:String,
+  timeStamp:{type:Date,default:Date.now}
+});
+const Message = mongoose.model(
+  "message",
+  message_schema,
+  "message_schema"
+);
+
 // for chatbox
-app.post("/chatbox",(req,res)=>{
+app.post("/chatbox",async (req,res)=>{
   if(!req.session.userid){
     return res.status(401).json({error:"Unauthorized"})
   }
-  const message=req.body.message
-  console.log(message)
-  return res.status(200).json({success:true})
+  try {
+    const message=new Message({
+      senderId:req.session.userid,
+      receiverId:req.body.selectedReceiverId,
+      message:req.body.message,
+    })
+    await message.save();
+    res.status(200).json({success:true})
+  } catch (error) {
+    return res.status(401).json({error:"some error occured"})
+  }
+})
+app.get("/chatbox/:receiverId",async (req,res)=>{
+  // console.log(req.params.receiverId)
+  // now i have got the receiver id
+  // just need to fetch the old messages form the database
+  const receiverId=req.params.receiverId
+  const senderId=req.session.userid
+  console.log(receiverId)
+  console.log(senderId)
+  const findmessage=await Message.find({$or:[{senderId:senderId,receiverId:receiverId},{receiverId:senderId}]}).sort({timeStamp:1});
+  console.log(findmessage)
+  return res.status(200).json({findmessage,senderId})
 })
 
 // for connectbox
-app.post("/connect_button",(req,res)=>{
-  const connectedUserId=req.body.connect_button
-  console.log(`connected user id :${connectedUserId}`)
-  console.log(`logged user id :${req.session.userid}`)
-  return res.redirect("/home")
-})
-// schema and models for chatbox
-// const message = mongoose.model(
-//   "message",
-//   message_schema,
-//   "message_schema"
-// );
+// app.post("/connect_button",async (req,res)=>{
+//   console.log(req.body)
+//   const connectedUserId=req.body.connect_button
+//   if(!req.session.userid){
+//     return res.status(400).json({error:"User not logged in."})
+//   }
+  // try {
+  //   const message=new Message({
+  //     senderId:req.session.userid,
+  //     receiverId:connectedUserId,
+  //     // message:
+  //   })
+  // } catch (error) {
+    
+  // }
+  // console.log(`connected user id :${connectedUserId}`)
+  // console.log(`logged user id :${req.session.userid}`)
+  // const date=new Date()
+  // try {
+  //   const existingMessage=await Message.findOne({
+  //     $or:[
+  //       { message_id1: connectedUserId, message_id2: req.session.userid },
+  //       { message_id1: req.session.userid, message_id2: connectedUserId }
+  //     ]
+  //   })
 
-// const message_schema = new mongoose.Schema({
-// });
+  //   if(existingMessage){
+  //     console.log("user found")
+  //   }
+  //   else{
+  //     console.log("No previous message found. Creating new message...");
+  //     const message=new Message({
+  //       message_id1:connectedUserId,
+  //       message_id2:req.session.userid,
+  //       Date_created:date.toISOString()
+  //     })
+  //     await message.save()
+  //   }
+  // } catch (error) {
+  //   console.error("Error saving message:", error);
+  // }
+//   return res.redirect("/home")
+// })
+
+app.listen(PORT, () => {
+  console.log(`Server is running on ${PORT}`);
+});
